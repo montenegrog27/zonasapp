@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Zonas Admin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Mapbox -->
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css"
+      rel="stylesheet"
+    />
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
+
+    <!-- Mapbox Draw -->
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-draw/v1.4.2/mapbox-gl-draw.css"
+      rel="stylesheet"
+    />
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-draw/v1.4.2/mapbox-gl-draw.js"></script>
+
+    <!-- Firebase -->
+    <script type="module" src="./src/firebase.js"></script>
+
+    <!-- Lógica del mapa -->
+    <script type="module" src="./src/main.js"></script>
+  </head>
+  <body class="bg-neutral-100 min-h-screen p-4">
+    <h1 class="text-2xl font-bold mb-4">🗺️ Editor de Zonas</h1>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+      <!-- Panel izquierdo -->
+<!-- ...todo igual hasta aquí -->
+
+<!-- Panel izquierdo -->
+<div class="lg:col-span-1 space-y-4">
+  <div class="bg-white p-4 rounded shadow">
+    <h2 class="font-bold mb-2">Agregar Zona</h2>
+    <input
+      id="zona-name"
+      type="text"
+      placeholder="Nombre de la zona"
+      class="border px-3 py-2 rounded w-full mb-2"
+    />
+    <select id="zona-cocina" class="border px-3 py-2 rounded w-full mb-2">
+      <option value="central">Sucursal Santa Fe</option>
+      <option value="godoycruz">Dark Kitchen Godoy Cruz</option>
+    </select>
+    <label class="flex items-center gap-2 mb-2">
+      <input type="checkbox" id="zona-gratis" />
+      Envío gratis
+    </label>
+    <button
+      id="guardar-zona"
+      class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded font-semibold w-full"
+    >
+      Guardar Zona
+    </button>
+  </div>
+
+  <div class="bg-white p-4 rounded shadow" id="zona-lista">
+    <h2 class="font-bold mb-2">Zonas guardadas</h2>
+    <div id="zonas-lista" class="space-y-2 text-sm text-gray-800"></div>
+  </div>
+
+<div class="bg-white p-4 rounded shadow mt-6">
+  <h2 class="font-bold mb-2">Configuración de Envíos</h2>
+  <input
+    id="base-cost"
+    type="number"
+    placeholder="Costo base (ej. 1500)"
+    class="border px-3 py-2 rounded w-full mb-2"
+  />
+  <input
+    id="price-km"
+    type="number"
+    placeholder="Precio por km (ej. 500)"
+    class="border px-3 py-2 rounded w-full mb-2"
+  />
+  <button
+    id="guardar-config"
+    class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded font-semibold w-full"
+  >
+    Guardar Configuración
+  </button>
+
+  <!-- Mensaje visual -->
+  <p id="config-status" class="text-green-600 text-sm mt-2 hidden">
+    Configuración actual cargada ✅
+  </p>
+</div>
+
+</div>
+
+<!-- Mapa -->
+<div id="map" class="lg:col-span-2 w-full h-[600px] rounded shadow"></div>
+
+  </body>
+</html>

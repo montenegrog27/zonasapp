@@ -1,0 +1,27 @@
+{
+  "name": "zonas-admin",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "postcss.config.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@mapbox/mapbox-gl-draw": "^1.4.2",
+    "@turf/turf": "^7.2.0",
+    "firebase": "^10.7.1",
+    "mapbox-gl": "^2.13.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.15",
+    "postcss": "^8.4.31",
+    "tailwindcss": "^3.4.3",
+    "vite": "^5.2.0"
+  }
+}
